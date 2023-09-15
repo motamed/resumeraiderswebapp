@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v2
         with:
-          node-version: '18.x'
+          node-version: '18.14.0'
       - run: echo 'NODE_OPTIONS="--openssl-legacy-provider"'
 
       - name: npm install, build, and test
