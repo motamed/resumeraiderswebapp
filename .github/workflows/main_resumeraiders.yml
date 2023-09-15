@@ -9,7 +9,7 @@ on:
       - main
   workflow_dispatch:
 env:
-  NODE_OPTIONS: '--openssl-legacy-provider'
+  NODE_OPTIONS: 'openssl-legacy-provider'
 jobs:
   build:
     runs-on: ubuntu-latest
