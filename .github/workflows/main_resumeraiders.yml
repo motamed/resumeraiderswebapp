@@ -15,16 +15,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set env
-        run: echo 'NODE_OPTIONS="--openssl-legacy-provider"' >> $GITHUB_ENV
 
       - name: Set up Node.js version
         uses: actions/setup-node@v2
         with:
-          node-version: '18.14.0'
+          node-version: "18"
+      - run: node --version
+        #env:
+         # NODE_OPTIONS: "--openssl-legacy-provider"
 
       - name: npm install, build, and test
         run: |
+          unset NODE_OPTIONS
           npm install
           npm run build --if-present
           npm run test --if-present
